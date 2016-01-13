@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<!-- 
+          http://localhost/Project/16011201-angular/src/angular02.html
+	 -->
+
+</head>
+<body ng-app="app">
+	<div class="container" ng-controller="dologin">
+        <input type="text" ng-model="user.uname">
+        <input type="text" ng-model="user.pwd">
+        <div class="btn btn-default" ng-click="login()">登录</div>
+        <div class="{{classmsg}}"  ng-if="tipmsg.length>0">{{tipmsg}}</div>
+	</div>
+
+	<script type="text/javascript">
+	     angular.module("app",[]).controller("dologin",function($scope,$http){
+               $scope.user = {"uname":"","pwd":""};
+               $scope.tipmsg = "";
+                $scope.classmsg = "";
+   
+
+               $scope.login = function() {
+               	     $scope.tipmsg = "";
+
+	                 var req={
+	               	  method:"GET",
+	               	  url:"http://localhost/Project/16011201-angular/src/server.php",
+	               	  params:{"uname":$scope.user.uname,"pwd":$scope.user.pwd}
+	                 }
+
+                     
+
+               	     console.log("   "+ $scope.user.uname + "  " + $scope.user.pwd);
+               	     // $http.get(" http://localhost/Project/16011201-angular/src/server.php?uname=123&pwd=123").success(function(data){
+                     //            $scope.tipmsg = data;
+               	     // });
+               	     $http(req).success(function(data){
+               	     	        if(data=="success"){
+                                       $scope.classmsg = "alert alert-success";
+               	     	        }else{
+                                       $scope.classmsg = "alert alert-warning";
+               	     	        }
+                                $scope.tipmsg = data;
+               	     });
+               }
+
+
+	     })
+
+            
+	</script>
+</body>
+</html>

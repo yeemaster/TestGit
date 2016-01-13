@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todolist">
+<head>
+	<meta charset="UTF-8">
+	<title>angular example</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+</head>
+<body ng-controller="TaskCtrl">
+
+      <div class="container">
+      	<div class="input-group">
+      	      <input type="text" ng-model="task" class="form-control">
+              <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="add()">提交</button>
+              </span>
+      	</div>
+
+      <h4 ng-if="tasks.length>0">任务列表</h4>
+      <ul class="list-group">
+      	<li class="list-group-item" ng-repeat="item in tasks track by $index">
+      	{{item}}
+      	<a href="" ng-click="tasks.splice($index,1)">删除</a>
+      	</li>
+      </ul>
+
+      </div>
+
+
+      <script type="text/javascript">
+        angular.module("todolist",[])
+                .controller("TaskCtrl",function($scope){
+                    $scope.task = "";
+                    $scope.tasks=[];  //在js中，内容其实是可以重复的，可以重复的原因是每一个下标都不一样。   。。当前的tasks里面有下标么！！！
+                    $scope.add = function(){
+                        $scope.tasks.push($scope.task);
+                    }
+                })     
+
+
+      </script>
+      <!-- 
+              ng-app:边界
+              ng-controller:控制器
+              ng-model: 输入框内容处理
+              ng-click: 事件处理
+              ng-if:条件处理
+              ng-hide:隐藏
+              ng-repeat:定义数据遍历
+
+       -->
+
+</body>
+</html>

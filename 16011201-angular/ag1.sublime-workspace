@@ -1,0 +1,278 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"SPA",
+				"span"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"pe",
+				"person"
+			],
+			[
+				"per",
+				"persons"
+			],
+			[
+				"ang",
+				"angular03"
+			],
+			[
+				"cl",
+				"classmsg"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"sc",
+				"scope"
+			],
+			[
+				"contr",
+				"controller"
+			],
+			[
+				"G",
+				"gruntTest"
+			],
+			[
+				"fun",
+				"function	(Gruntfile.js)"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"About"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 725.0
+	},
+	"console":
+	{
+		"height": 467.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/G/036-xampp/htdocs/Project/16011201-angular",
+		"/G/036-xampp/htdocs/Project/16011201-angular/src",
+		"/G/036-xampp/htdocs/Project/16011201-angular/src/css",
+		"/G/036-xampp/htdocs/Project/16011201-angular/src/js"
+	],
+	"file_history":
+	[
+		"/G/036-xampp/htdocs/Project/16011201-angular/src/angular03.html",
+		"/G/036-xampp/htdocs/Project/16011201-angular/src/angular02.html",
+		"/G/036-xampp/htdocs/Project/16011201-angular/src/server.php",
+		"/D/Users/yq/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/G/036-xampp/htdocs/Project/16011201-angular/src/angular01.html",
+		"/E/013-尚学堂/003-Exercise/160111-Grunt-3/Gruntfile.js",
+		"/E/013-尚学堂/003-Exercise/160111-Grunt-3/package.json",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/build/gruntTest.js",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/js/gruntTest.js",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/js/gruntTest1.js",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/js/gruntTest2.js",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/js/gruntTest3.js",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/js/gruntTest4.js",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/js/gruntTest5.js",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/grunt.sublime-project",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/build/grunt-test-1.0.0.js.min.js",
+		"/E/013-尚学堂/003-Exercise/160111-grunt/build/grunt-test.min.js",
+		"/E/013-尚学堂/003-Exercise/components/ZNS/Basic.js",
+		"/E/013-尚学堂/003-Exercise/components/Project/1117QQ.html"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"myForm",
+			"user",
+			"myForm",
+			"myAddress",
+			"click方法传递一个对象",
+			"}];\n",
+			"	     \n",
+			"                                $",
+			";\n",
+			"});\n",
+			"	   	   "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "ag1.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 587.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 228.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

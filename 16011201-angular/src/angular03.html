@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular 03</title>
+	<!-- 
+		函数会影响到全局命名空间
+		JavaScript 中应避免使用全局函数。因为他们很容易被其他脚本文件覆盖。
+		AngularJS 模块让所有函数的作用域在该模块下，避免了该问题。
+	 -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+
+	<style type="text/css">
+		table, th , td  {
+		  border: 1px solid grey;
+		  border-collapse: collapse;
+		  padding: 5px;
+		}
+
+        table tr:nth-child(odd)	{
+		  background-color: #f1f1f1;
+		}
+		table tr:nth-child(even) {
+		  background-color: #ffffff;
+		}
+		b{
+			color: red;
+		}
+
+	</style>
+	<!-- 
+          http://localhost/Project/16011201-angular/src/angular03.html
+	 -->
+</head>
+<body ng-app="angular03">
+    <div class="container">
+		<div ng-controller ="nc1">
+	       	<ul>
+	       	   <!-- 第一迭代输出 ng-repeat -->
+				<li ng-repeat ="person in persons | orderBy:'name'">
+	       	   	 {{$index + 1}} : {{person.name}} is {{person.age}} years old {{weiba}}
+
+	       	   	 <!-- 第七 过滤器 -->
+	       	   	 <p> daxie: {{person.name | uppercase}}</p>
+	       	    </li>
+	       	</ul>
+
+
+            <table class="table">
+            	<tr ng-repeat="person in persons">
+            		<td>{{$index}}</td>
+            		<td>{{person.name}}</td>
+            		<td>{{person.age}}</td>
+            	</tr>
+            </table>
+
+            <!-- 第二 控制css ng-style -->
+	       	<div ng-style="mycolor">
+	       		 tiantian
+	       	</div>
+
+	       	<div runoob-directive></div>
+            
+            <!-- 第三 下拉框 ng-option -->
+            <select ng-model="youselect" ng-options=" person.id as  (person.name + '--'+ person.age) group by person.sex for person in persons">
+            	<option value="">请选择你的萌宠</option>
+            </select>
+            <span ng-if="youselect.length>0">选择了{{youselect}}</span>
+
+            </br>
+
+
+            <!-- 第八 双向绑定  数据的变化会反应到界面 界面数据的变化会影响到绑定的值 -->
+
+            <input type="text" ng-model="context" name="intext">
+            <div ng-if="context.length>0">输入的内容为：{{context}}</div>
+
+            </br>
+
+
+            <!-- 第九 表单 -->
+            <form action="" name="myform">         
+                    EMAIL:
+                    <input type="email" name="myinput" ng-model="fncontext">
+                    <b ng-show="myform.myinput.$error.email">不是一个合法的邮箱地址</b>
+                    <h1>状态</h1>
+					<p>Valid: {{myform.myinput.$valid}} (如果输入的值是合法的则为 true)。</p>
+					<p>Dirty: {{myform.myinput.$dirty}} (如果值改变则为 true)。</p>
+					<p>Touched: {{myform.myinput.$touched}} (如果通过触屏点击则为 true)。</p>
+
+                    <p>用户名:<br>
+				    <input type="text" name="user" ng-model="user" required>
+				    <span style="color:red" ng-show="myform.user.$dirty && myform.user.$invalid">
+				    <span ng-show="myform.user.$error.required">用户名是必须的。</span>
+				    </span>
+				    </p>
+
+				    <p>邮箱:<br>
+				     <input type="email" name="email" ng-model="email" required>
+				     <span style="color:red" ng-show="myform.email.$dirty && myform.email.$invalid">
+				     <span ng-show="myform.email.$error.required">邮箱是必须的。</span>
+				     <span ng-show="myform.email.$error.email">非法的邮箱。</span>
+				     </span>
+				    </p>
+
+				    <p>
+				      <input type="submit"
+				       ng-disabled="myform.user.$dirty && myform.user.$invalid ||
+				     myform.email.$dirty && myform.email.$invalid">
+				    </p>
+            </form>
+
+			<!-- $dirty	表单有填写记录
+			$valid	字段内容合法的
+			$invalid	字段内容是非法的
+			$pristine	表单没有填写记录 -->
+
+
+
+	    </div>  
+
+
+	    <div ng-controller="nc2">
+	       	<ul>
+	       	   <li ng-repeat="person in persons | orderBy:'name'">
+	       	   	 {{person.name}} is {{person.age}} years old {{weiba}}
+	       	   	  <!-- 第五 ng-click 你甚至可以为ng-click方法传递一个对象 当然还有ng-dblclick标签-->
+	       	   	  <div class="btn btn-default" ng-click="printf(person)"></div>
+	       	   </li>
+	       	</ul>
+	    </div>  
+    </div> 
+
+
+
+    <!-- 
+            http://www.runoob.com/angularjs/angularjs-include.html
+			<body ng-app="myApp" ng-controller="userCtrl">
+			<div class="container">
+			  <div ng-include="'myUsers_List.htm'"></div>
+			  <div ng-include="'myUsers_Form.htm'"></div>
+			</div>
+			<script src= "myUsers.js"></script>
+			</body>
+			通过 JavaScript 有很多种方式可以在 HTML 中包含 HTML 文件。
+            通常我们使用 http 请求 (AJAX) 从服务端获取数据，返回的数据我们可以通过 使用 innerHTML 写入到 HTML 元素中。
+            使用 AngularJS, 你可以使用 ng-include 指令来包含 HTML 内容:
+			
+     -->
+
+   <script type="text/javascript">
+          var app = angular.module("angular03",[]);
+          //第四 自定义指令
+          app.directive("runoobDirective", function() {
+		  return {
+		  	    // restrict 值可以是以下几种: E 只限元素名使用 A 只限属性使用 C 只限类名使用 M 只限注释使用 restrict 默认值为 EA, 即可以通过元素名和属性名来调用指令。
+		  	    //<runoob-directive></runoob-directive>
+		  	    //<div runoob-directive></div>
+		  	    //<div class="runoob-directive"></div>
+		  	    //<!-- 指令: runoob-directive -->  这点看不明白
+				restrict : "A",
+				template : "<h1>自定义指令!</h1>"
+				};
+		  }); 
+
+          app.controller("nc1",function($scope,$rootScope){
+               $scope.persons = [{"id":"1","name":"a1","age":13,"sex":"w"},{"id":"2","name":"a6","age":44,"sex":"m"},{"id":"3","name":"a5","age":123,"sex":"w"},{"id":"4","name":"a2","age":33,"sex":"m"}];
+               $scope.mycolor = {
+               	   "color":"blue"
+               }
+               //第六 
+               //$rootScope 作用于整个应用 可以在各个control中调用
+               $rootScope.weiba = "hao persons";
+          })
+
+          app.controller("nc2",function($scope){
+               $scope.persons = [{"name":"b1","age":13,"descr":"fdsf"},{"name":"b2","age":44,"descr":"ggg"},{"name":"b3","age":123,"descr":"asd"},{"name":"b0","age":33,"descr":"dd"}];
+               $scope.printf = function(argv){
+               	    alert(argv.descr);
+               }
+
+          });
+   </script>
+</body>
+</html>
